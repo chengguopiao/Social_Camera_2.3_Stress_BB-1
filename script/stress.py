@@ -91,6 +91,7 @@ class CameraTest(unittest.TestCase):
         for i in range(3):
             tb.switchBackOrFrontCamera('front')
             tb.switchBackOrFrontCamera('back')
+            time.sleep(1)
 
     # Test case 4
     def testChangeFlashMode100Times(self):
@@ -335,7 +336,7 @@ class CameraTest(unittest.TestCase):
         """
     #step 1
         sm.switchCaptureMode('video')
-        so.setCameraOption('Video Size','false','5')
+        so.setCameraOption('Video Size',['false','5'])
         d.expect('video.png')
     #step 2 
         for i in range (5):
@@ -352,7 +353,7 @@ class CameraTest(unittest.TestCase):
         """
     #step 1
         sm.switchCaptureMode('video')
-        so.setCameraOption('Video Size','false','4')
+        so.setCameraOption('Video Size',['false','4'])
     #step 2 
         for i in range (5):
             tb.captureAndCheckPicCount('video',3)
