@@ -61,7 +61,7 @@ class CameraTest(unittest.TestCase):
         2.Switch camera mode 50 times
         3.Exit  activity
         """
-        for i in range(5):
+        for i in range(50):
             mode = random.choice(CAMERAMODE_LIST)
             sm.switchCaptureMode(mode)
 
@@ -74,7 +74,7 @@ class CameraTest(unittest.TestCase):
         2.Repeat 50 times
         3.Exit  activity
         """
-        for i in range(5):
+        for i in range(50):
             self._pressBack(4)
             a.cmd('launch','com.intel.camera22/.Camera')
             assert d(resourceId = 'com.intel.camera22:id/shutter_button').wait.exists(timeout=1000),'Launch camera failed!!'
@@ -88,7 +88,7 @@ class CameraTest(unittest.TestCase):
         2.Switch Back/Front camera in single mode 30 times
         3.Exit  activity
         """
-        for i in range(3):
+        for i in range(30):
             tb.switchBackOrFrontCamera('front')
             tb.switchBackOrFrontCamera('back')
 
@@ -101,7 +101,7 @@ class CameraTest(unittest.TestCase):
         2.Change flash mode 100 times
         3.Exit  activity
         """
-        for i in range(1):
+        for i in range(100):
             flash_mode = random.choice(FLASH_MODE)
             sm.so.setCameraOption('Flash',flash_mode)
 
@@ -114,7 +114,7 @@ class CameraTest(unittest.TestCase):
         2.Change scene mode 100 times
         3.Exit  activity
         """
-        for i in range(1):
+        for i in range(100):
             scene_mode = random.choice(SCENE_MODE)
             so.setCameraOption('Scenes',scene_mode)
 
@@ -127,7 +127,7 @@ class CameraTest(unittest.TestCase):
         2.Change exposure mode 100 times
         3.Exit  activity
         """
-        for i in range(1):
+        for i in range(100):
             exposure_mode = random.choice(EXPOSURE_MODE)
             so.setCameraOption('Exposure',exposure_mode)
 
@@ -142,7 +142,7 @@ class CameraTest(unittest.TestCase):
         2.Change picture size 100 times
         3.Exit  activity
         """
-        for i in range(1):
+        for i in range(100):
             size_mode = random.choice(PICTURESIZE_MODE)
             so.setCameraOption('Picture Size',size_mode)
 
@@ -156,7 +156,7 @@ class CameraTest(unittest.TestCase):
         3.Exit  activity
         """
         sm.switchCaptureMode('video')
-        for i in range(1):
+        for i in range(100):
             size_mode = random.choice(VIDEOSIZE_MODE)
             so.setCameraOption('Video Size',size_mode)
 
@@ -169,7 +169,7 @@ class CameraTest(unittest.TestCase):
                  2.enter gallery from gallery preview thumbnail 100times
                  3.Exit  activity
         '''
-        for i in range(1):
+        for i in range(100):
             time.sleep(3)
             tb.captureAndCheckPicCount('single',2)  # capture picture
             time.sleep(1)                                    
@@ -191,7 +191,7 @@ class CameraTest(unittest.TestCase):
                  2.Capture single image 500 times
                  3.Exit  activity
         '''
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('single',2)
 
     #case 11
@@ -203,7 +203,7 @@ class CameraTest(unittest.TestCase):
                  3.Exit  activity
         '''
         tb.switchBackOrFrontCamera('front') #Force set camera to front
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('single',2)
         tb.switchBackOrFrontCamera('back')
     
@@ -216,7 +216,7 @@ class CameraTest(unittest.TestCase):
                  3.Exit  activity
         '''
         sm.switchCaptureMode('hdr')
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('single',5)
 
     #case 13
@@ -228,7 +228,7 @@ class CameraTest(unittest.TestCase):
                  3.Exit  activity
         '''
         sm.switchCaptureMode('smile')
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('smile',2)
 
     #case 14
@@ -240,7 +240,7 @@ class CameraTest(unittest.TestCase):
                  3.Exit  activity
         '''
         sm.switchCaptureMode('video')
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('video',5)
 
     #case 15
@@ -254,7 +254,7 @@ class CameraTest(unittest.TestCase):
         '''
         sm.switchCaptureMode('video')
         tb.switchBackOrFrontCamera('front')
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('video',5)
         tb.switchBackOrFrontCamera('back')
 
@@ -269,7 +269,7 @@ class CameraTest(unittest.TestCase):
     #step 1
         sm.switchCaptureMode('perfectshot')
     #step 2 
-        for i in range(2):
+        for i in range(200):
             tb.captureAndCheckPicCount('single',5)
             time.sleep(2)
 
@@ -285,7 +285,7 @@ class CameraTest(unittest.TestCase):
     #step 1
         sm.switchCaptureMode('panorama')
     #step 2
-        for i in range(2):
+        for i in range(200):
             tb.captureAndCheckPicCount('smile',3)
             time.sleep(1)
 
@@ -303,7 +303,7 @@ class CameraTest(unittest.TestCase):
     #step 2
         tb.switchBackOrFrontCamera('back')
     #step 3
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('single',3)
             time.sleep(1)
   
@@ -321,7 +321,7 @@ class CameraTest(unittest.TestCase):
     #step 2
         tb.switchBackOrFrontCamera('back')
     #step 3
-        for i in range(5):
+        for i in range(500):
             tb.captureAndCheckPicCount('smile',3)
             time.sleep(1)
 
@@ -338,7 +338,7 @@ class CameraTest(unittest.TestCase):
         so.setCameraOption('Video Size','false','5')
         d.expect('video.png')
     #step 2 
-        for i in range (5):
+        for i in range (500):
             tb.captureAndCheckPicCount('video',3)
             time.sleep(1)   
 
@@ -354,7 +354,7 @@ class CameraTest(unittest.TestCase):
         sm.switchCaptureMode('video')
         so.setCameraOption('Video Size','false','4')
     #step 2 
-        for i in range (5):
+        for i in range (500):
             tb.captureAndCheckPicCount('video',3)
             time.sleep(1)   
 
@@ -372,7 +372,7 @@ class CameraTest(unittest.TestCase):
     #step 2 
         tb.switchBackOrFrontCamera('back')
     #step 3
-        for i in range(2):
+        for i in range(200):
             tb.captureAndCheckPicCount('single',5)
             time.sleep(1)
 ############################################################################################################
