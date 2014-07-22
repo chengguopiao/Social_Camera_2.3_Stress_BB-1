@@ -512,7 +512,7 @@ class TouchButton():
         modenew = Mode[cmode]
         currentindex = CONFIRM_MODE_LIST.index(modenew)
         if  mode_index != currentindex:
-            raise Exception('set'+ mode ' fail')
+            raise Exception('set'+ mode + ' fail')
 
 
     def captureAndCheckPicCount(self,capturemode,delaytime=0):
