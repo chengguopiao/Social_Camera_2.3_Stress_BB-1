@@ -376,6 +376,110 @@ class CameraTest(unittest.TestCase):
         for i in range(200):
             tb.captureAndCheckPicCount('single',5)
             time.sleep(1)
+            
+    # Test Case 25
+    def testCaptureDepthImage500Times(self):
+        """
+        test case Depth Image 500 times
+        back camera
+        """
+
+    #step 1
+        sm.switchCaptureMode('depth')
+    #step 2
+        for i in range(500):
+            tb.captureAndCheckPicCount('single',2)
+            time.sleep(1)
+
+    # Test Case 26
+    def testSwitchDepthToSingle100Times(self):
+        """
+        test Switch Depth mode to Single mode 100 times
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            sm.switchCaptureMode('single')
+            time.sleep(2)
+
+    # Test Case 27
+    def testCaptureDepthImageThenHDRImage100Times(self):
+        """
+        test capture depth image and then capture HDR image 100 times.
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            tb.captureAndCheckPicCount('single',2)
+            sm.switchCaptureMode('hdr')
+            tb.captureAndCheckPicCount('single',2)
+            time.sleep(2)
+
+    # Test Case 28
+    def testCaptureDepthImageThenSmileImage100Times(self):
+        """
+        test capture depth image and then capture smile image 100 times.
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            tb.captureAndCheckPicCount('single',2)
+            sm.switchCaptureMode('smile')
+            tb.captureAndCheckPicCount('smile',2)
+            time.sleep(2)
+
+    # Test Case 29
+    def testCaptureDepthImageThenTakeVideo100Times(self):
+        """
+        test capture depth image and then take video 100 times.
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            tb.captureAndCheckPicCount('single',2)
+            sm.switchCaptureMode('video')
+            tb.captureAndCheckPicCount('video',3)
+            time.sleep(2)
+
+    # Test Case 30
+    def testCaptureDepthImageThenBurstImage100Times(self):
+        """
+        test capture depth image and then capture burst image 100 times.
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            tb.captureAndCheckPicCount('single',2)
+            sm.switchCaptureMode('burstfast')
+            tb.captureAndCheckPicCount('single',2)
+            time.sleep(2)
+
+    # Test Case 31
+    def testCaptureDepthImageThenPanoramaImage100Times(self):
+        """
+        test capture depth image and then capture panorama image 100 times.
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            tb.captureAndCheckPicCount('single',2)
+            sm.switchCaptureMode('panorama')
+            tb.captureAndCheckPicCount('smile',2)
+            time.sleep(2)
+
+    # Test Case 32
+    def testCaptureDepthImageThenPerfectshotImage100Times(self):
+        """
+        test capture depth image and then capture panorama image 100 times.
+        back camera
+        """
+        for i in range(100):
+            sm.switchCaptureMode('depth')
+            tb.captureAndCheckPicCount('single',2)
+            sm.switchCaptureMode('perfectshot')
+            tb.captureAndCheckPicCount('single',2)
+            time.sleep(2)
+
 ############################################################################################################
 ##############################################################################################################
 
