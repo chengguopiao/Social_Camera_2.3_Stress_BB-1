@@ -387,6 +387,7 @@ class CameraTest(unittest.TestCase):
     #step 1
         sm.switchCaptureMode('depth')
     #step 2
+        time.sleep(5)
         for i in range(500):
             tb.captureAndCheckPicCount('single',2)
             time.sleep(1)
@@ -397,6 +398,7 @@ class CameraTest(unittest.TestCase):
         test Switch Depth mode to Single mode 100 times
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             sm.switchCaptureMode('single')
@@ -408,6 +410,7 @@ class CameraTest(unittest.TestCase):
         test capture depth image and then capture HDR image 100 times.
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             tb.captureAndCheckPicCount('single',2)
@@ -421,6 +424,7 @@ class CameraTest(unittest.TestCase):
         test capture depth image and then capture smile image 100 times.
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             tb.captureAndCheckPicCount('single',2)
@@ -434,6 +438,7 @@ class CameraTest(unittest.TestCase):
         test capture depth image and then take video 100 times.
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             tb.captureAndCheckPicCount('single',2)
@@ -447,6 +452,7 @@ class CameraTest(unittest.TestCase):
         test capture depth image and then capture burst image 100 times.
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             tb.captureAndCheckPicCount('single',2)
@@ -460,6 +466,7 @@ class CameraTest(unittest.TestCase):
         test capture depth image and then capture panorama image 100 times.
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             tb.captureAndCheckPicCount('single',2)
@@ -473,6 +480,7 @@ class CameraTest(unittest.TestCase):
         test capture depth image and then capture panorama image 100 times.
         back camera
         """
+        time.sleep(5)
         for i in range(100):
             sm.switchCaptureMode('depth')
             tb.captureAndCheckPicCount('single',2)
